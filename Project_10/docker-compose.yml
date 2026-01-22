@@ -6,7 +6,7 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: ors10
+      MYSQL_DATABASE: Project10
       MYSQL_ROOT_HOST: "%"
       TZ: Asia/Kolkata
     ports:
