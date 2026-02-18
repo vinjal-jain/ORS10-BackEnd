@@ -19,19 +19,18 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 public class ApplicationExceptionHandlerCtl {
 
     // All database related problems
-    @ExceptionHandler({
+ @ExceptionHandler({
         CannotCreateTransactionException.class,
         DataAccessResourceFailureException.class
     })
-    public ResponseEntity<ORSResponse> handleDatabaseException(Exception e) {
+   public ResponseEntity<ORSResponse> handleDatabaseException(Exception e) {
 
-        ORSResponse res = new ORSResponse(false);
-        res.addMessage("Database service is currently unavailable. Please try again later.");
-
-        return ResponseEntity
-                .status(HttpStatus.SERVICE_UNAVAILABLE)   // 503
-                .body(res);
-    }
+       ORSResponse res = new ORSResponse(false);
+       res.addMessage("Database service is currently unavailable. Please try again later.");
+       return ResponseEntity
+               .status(HttpStatus.SERVICE_UNAVAILABLE)   // 503
+               .body(res);
+}
 
     // All other runtime exceptions
     @ExceptionHandler(RuntimeException.class)
