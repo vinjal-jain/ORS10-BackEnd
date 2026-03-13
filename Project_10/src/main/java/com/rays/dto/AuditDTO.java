@@ -73,7 +73,6 @@ public class AuditDTO extends BaseDTO {
 
 	@Override
 	public String getUniqueKey() {
-		// SAME pattern as OfferDTO → offerCode
 		return "actionType";
 	}
 
